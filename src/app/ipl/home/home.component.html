@@ -1,0 +1,138 @@
+<div>
+  <mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let team">{{team.name}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="played">
+      <mat-header-cell *matHeaderCellDef>Played</mat-header-cell>
+      <mat-cell class="played-cell" *matCellDef="let team">{{team.played}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="wins">
+      <mat-header-cell *matHeaderCellDef>Won</mat-header-cell>
+      <mat-cell class="wins-cell" *matCellDef="let team">{{team.wins}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="lost">
+      <mat-header-cell *matHeaderCellDef>Lost</mat-header-cell>
+      <mat-cell class="wins-cell" *matCellDef="let team">{{team.played - team.wins}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="nrr">
+      <mat-header-cell *matHeaderCellDef>NRR</mat-header-cell>
+      <mat-cell class="nrr-cell" *matCellDef="let team">{{team.nrr| number:'0.3-3'}}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+  <div class="note">
+    <label>Note : </label>
+    <ul style="margin-top:0px">
+      <li>Click complete to see the updated points table</li>
+      <li>Click edit to revert the changes from the points table</li>
+    </ul>
+  </div>
+  <div class="root-div">
+    <div class="main-wrapper" *ngFor="let match of matchesScheduled; let i = index ;">
+      <div class="main-div">
+        <div class="team1">
+          <div>
+            <img [src]="teamLogos[match.homeTeam]" alt="image">
+          </div>
+          <span class="batting-result">
+            <span>
+              <mat-label>Batting {{matchesScheduled[i].homeTeamBattingFirst?'1st':'2nd'}}</mat-label>
+              <mat-slide-toggle [(ngModel)]="matchesScheduled[i].homeTeamBattingFirst" [disabled]="match.isComplete"
+                (change)="battingFirstToggle(i,'home',$event)">
+              </mat-slide-toggle>
+            </span>
+            <span>
+              <mat-label>{{matchesScheduled[i].homeTeamWon?'WON':'LOST'}}</mat-label>
+              <mat-slide-toggle [(ngModel)]="matchesScheduled[i].homeTeamWon" [disabled]="match.isComplete"
+                (change)="resultToggle(i,'home', $event)">
+              </mat-slide-toggle>
+            </span>
+          </span>
+          <span class="name-runs-overs-team1">
+            <label>{{match.homeTeam}}</label>
+            <span class="overs">
+              <button type="button" name="reduceOvers" (click)="adjustOvers('home',i,'reduce')">-</button>
+              <input matInput type="number" name="over" value="" [(ngModel)]="matchesScheduled[i].homeOversBowled"
+                [disabled]="match.isComplete" class="input-field"
+                [class.overs-error]="matchesScheduled[i].homeOversError">
+              <button type="button" name="increaseOvers" (click)="adjustOvers('home',i,'add')">+</button>
+            </span>
+            <span class="runs">
+              <button type="button" name="reduceRuns" (click)="adjustRuns('home',i,'reduce')">-</button>
+              <input #homeOver type="number" name="over" value="" [(ngModel)]="matchesScheduled[i].homeRunsScored"
+                [disabled]="match.isComplete" class="input-field">
+              <button type="button" name="increaseRuns" (click)="adjustRuns('home',i,'add')">+</button>
+            </span>
+            <span class="wickets">
+              <mat-slide-toggle [(ngModel)]="matchesScheduled[i].homeTeamAllOut" [disabled]="match.isComplete">
+              </mat-slide-toggle>
+            </span>
+          </span>
+        </div>
+        <div class="inbetween-teams">
+          <span class="runs-overs-label">
+            <label>vs</label>
+            <span class="overs">
+              <label>Overs</label>
+            </span>
+            <span class="runs">
+              <label>Runs</label>
+            </span>
+            <span class="runs">
+              <label>All out</label>
+            </span>
+          </span>
+        </div>
+        <div class="team2">
+          <span class="name-runs-overs-team2">
+            <label>{{match.visitingTeam}}</label>
+            <span class="overs">
+              <button type="button" name="reduceOvers" (click)="adjustOvers('visiting',i,'reduce')">-</button>
+              <input matInput type="number" name="over" value="" [(ngModel)]="matchesScheduled[i].visitingOversBowled"
+                [disabled]="match.isComplete" class="input-field">
+              <button type="button" name="increaseOvers" (click)="adjustOvers('visiting',i,'add')">+</button>
+            </span>
+            <span class="runs">
+              <button type="button" name="reduceRuns" (click)="adjustRuns('visiting',i,'reduce')">-</button>
+              <input type="number" name="over" value="" [(ngModel)]="matchesScheduled[i].visitingRunsScored"
+                [disabled]="match.isComplete" class="input-field">
+              <button type="button" name="increaseRuns" (click)="adjustRuns('visiting',i,'add')">+</button>
+            </span>
+            <span class="wickets">
+              <mat-slide-toggle [(ngModel)]="matchesScheduled[i].visitingTeamAllOut" [disabled]="match.isComplete">
+              </mat-slide-toggle>
+            </span>
+          </span>
+          <span class="batting-result">
+            <span>
+              <mat-label>Batting {{matchesScheduled[i].visitingTeamBattingFirst?'1st':'2nd'}}</mat-label>
+              <mat-slide-toggle [(ngModel)]="matchesScheduled[i].visitingTeamBattingFirst" [disabled]="match.isComplete"
+                (change)="battingFirstToggle(i,'visiting', $event)">
+              </mat-slide-toggle>
+            </span>
+            <span>
+              <mat-label>{{matchesScheduled[i].visitingTeamWon?'WON':'LOST'}}</mat-label>
+              <mat-slide-toggle [(ngModel)]="matchesScheduled[i].visitingTeamWon" [disabled]="match.isComplete"
+                (change)="resultToggle(i,'visiting', $event)">
+              </mat-slide-toggle>
+            </span>
+          </span>
+          <div>
+            <img [src]="teamLogos[match.visitingTeam]" alt="image">
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <span class="Complete">
+          <button class="" mat-raised-button color="accent" (click)="simulatePointsTable(match,'add')"
+            *ngIf="!match.isComplete">Complete</button>
+          <button class="" mat-raised-button color="accent" (click)="simulatePointsTable(match,'remove')"
+            *ngIf="match.isComplete">Edit</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
