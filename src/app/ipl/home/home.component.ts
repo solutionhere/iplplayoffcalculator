@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     "Rajasthan Royals", "Mumbai Indians", "Sunrisers Hyderabad"];
   displayedColumns: string[] = ['name', 'played', 'wins', 'lost', 'nrr'];
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
-  matchesScheduled: any[] = matchesScheduledData;
+  matchesScheduled: any[] = [];
   teamLogos = logos;
   adjustValues: any = {
     'add': 1,
@@ -49,6 +49,7 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit(): void {
     console.log(this.matchResults);
+    this.matchesScheduled = matchResultsData.filter(each=>each.homeTeam!='TBA'); 
     this.matchesScheduled.forEach(each => {
       each.homeOversBowled = 0.0;
       each.visitingOversBowled = 0.0;
