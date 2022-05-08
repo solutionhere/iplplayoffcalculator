@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "gpbuild": "ng build --prod --base-href \"https://solutionhere.github.io/iplplayoffcalculator/\"",
+    "gppublish": "npx angular-cli-ghpages --dir=dist/iplcalc"
   },
   "private": true,
   "dependencies": {

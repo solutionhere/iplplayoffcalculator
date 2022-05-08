@@ -882,5 +882,22 @@
     "firstInningsWickets": 5,
     "secondInningsWickets": 4,
     "winner": "Rajasthan Royals"
+  },
+  {
+    "matchId": 1304099,
+    "matchDate": "2022-05-07T00:00:00.000Z",
+    "homeTeam": "Lucknow Super Giants",
+    "visitingTeam": "Kolkata Knight Riders",
+    "battingFirst": "Lucknow Super Giants",
+    "battingSecond": "Kolkata Knight Riders",
+    "firstInningsScore": 176,
+    "secondInningsScore": 101,
+    "firstInningsBalls": 120,
+    "secondInningsBalls": 87,
+    "firstInningsBallsForNRR": 120,
+    "secondInningsBallsForNRR": 120,
+    "firstInningsWickets": 7,
+    "secondInningsWickets": 10,
+    "winner": "Lucknow Super Giants"
   }
 ]
