@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit(): void {
     console.log(this.matchResults);
-    this.matchesScheduled = matchResultsData.filter(each=>each.homeTeam!='TBA'); 
+    this.matchesScheduled = matchesScheduledData.filter(each=>each.homeTeam!='TBA'); 
     this.matchesScheduled.forEach(each => {
       each.homeOversBowled = 0.0;
       each.visitingOversBowled = 0.0;
