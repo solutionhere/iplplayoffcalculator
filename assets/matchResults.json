@@ -899,5 +899,22 @@
     "firstInningsWickets": 7,
     "secondInningsWickets": 10,
     "winner": "Lucknow Super Giants"
+  },
+  {
+    "matchId": 1304100,
+    "matchDate": "2022-05-08T00:00:00.000Z",
+    "homeTeam": "Royal Challengers Bangalore",
+    "visitingTeam": "Sunrisers Hyderabad",
+    "battingFirst": "Royal Challengers Bangalore",
+    "battingSecond": "Sunrisers Hyderabad",
+    "firstInningsScore": 192,
+    "secondInningsScore": 125,
+    "firstInningsBalls": 120,
+    "secondInningsBalls": 116,
+    "firstInningsBallsForNRR": 120,
+    "secondInningsBallsForNRR": 120,
+    "firstInningsWickets": 3,
+    "secondInningsWickets": 10,
+    "winner": "Royal Challengers Bangalore"
   }
 ]
