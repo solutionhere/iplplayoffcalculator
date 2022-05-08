@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   teams = ["Lucknow Super Giants", "Gujarat Titans", "Royal Challengers Bangalore",
     "Kolkata Knight Riders", "Punjab Kings", "Chennai Super Kings", "Delhi Capitals",
     "Rajasthan Royals", "Mumbai Indians", "Sunrisers Hyderabad"];
-  displayedColumns: string[] = ['name', 'played', 'wins', 'lost', 'nrr'];
+  displayedColumns: string[] = ['name', 'played', 'wins', 'lost', 'nrr', 'points'];
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
   matchesScheduled: any[] = [];
   teamLogos = logos;
@@ -212,14 +212,14 @@ export class HomeComponent implements OnInit {
   simulatePointsTable(eachScheduledMatch: any, type: string) {
     console.log(eachScheduledMatch);
     let value = eachScheduledMatch.homeOversBowled;
-    var isError = (typeof (+value) != "number") || (+value < 0) || (+value >= 20) || (+(value.toString().split(".")[1]) > 5);
+    var isError = (typeof (+value) != "number") || (+value < 0) || (+value > 20) || (+(value.toString().split(".")[1]) > 5);
     console.log(isError);
     if (isError) {
       alert('Please enter valid overs.');
       return;
     }
     value = eachScheduledMatch.visitingOversBowled;
-    var isError = (typeof (+value) != "number") || (+value < 0) || (+value >= 20) || (+(value.toString().split(".")[1]) > 5);
+    var isError = (typeof (+value) != "number") || (+value < 0) || (+value > 20) || (+(value.toString().split(".")[1]) > 5);
     console.log(isError);
     if (isError) {
       alert('Please enter valid overs.');
