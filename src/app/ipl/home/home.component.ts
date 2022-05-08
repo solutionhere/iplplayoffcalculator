@@ -212,17 +212,17 @@ export class HomeComponent implements OnInit {
   simulatePointsTable(eachScheduledMatch: any, type: string) {
     console.log(eachScheduledMatch);
     let value = eachScheduledMatch.homeOversBowled;
-    var isError = (typeof (+value) != "number") || (+value < 0) || (+value >= 20) || (+(value.toString().split(".")[1]) > 5);
+    var isError = (typeof (+value) != "number") || (+value < 0) || (+value > 20) || (+(value.toString().split(".")[1]) > 5);
     console.log(isError);
     if (isError) {
-      alert('Please enter valid overs.');
+      alert('Please enter valid overs for '+ eachScheduledMatch.homeTeam);
       return;
     }
     value = eachScheduledMatch.visitingOversBowled;
-    var isError = (typeof (+value) != "number") || (+value < 0) || (+value >= 20) || (+(value.toString().split(".")[1]) > 5);
+    var isError = (typeof (+value) != "number") || (+value < 0) || (+value > 20) || (+(value.toString().split(".")[1]) > 5);
     console.log(isError);
     if (isError) {
-      alert('Please enter valid overs.');
+      alert('Please enter valid oversfor '+ eachScheduledMatch.visitingTeam);
       return;
     }
     if (type == 'add') {
