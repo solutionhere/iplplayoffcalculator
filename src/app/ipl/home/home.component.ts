@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   teams = ["Lucknow Super Giants", "Gujarat Titans", "Royal Challengers Bangalore",
     "Kolkata Knight Riders", "Punjab Kings", "Chennai Super Kings", "Delhi Capitals",
     "Rajasthan Royals", "Mumbai Indians", "Sunrisers Hyderabad"];
-  displayedColumns: string[] = ['name', 'played', 'wins', 'lost', 'nrr'];
+  displayedColumns: string[] = ['name', 'played', 'wins', 'lost', 'nrr', 'points'];
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
   matchesScheduled: any[] = [];
   teamLogos = logos;

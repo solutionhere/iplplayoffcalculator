@@ -14,11 +14,15 @@
     </ng-container>
     <ng-container matColumnDef="lost">
       <mat-header-cell *matHeaderCellDef>Lost</mat-header-cell>
-      <mat-cell class="wins-cell" *matCellDef="let team">{{team.played - team.wins}}</mat-cell>
+      <mat-cell class="lost-cell" *matCellDef="let team">{{team.played - team.wins}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="nrr">
       <mat-header-cell *matHeaderCellDef>NRR</mat-header-cell>
       <mat-cell class="nrr-cell" *matCellDef="let team">{{team.nrr| number:'0.3-3'}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="points">
+      <mat-header-cell *matHeaderCellDef>Points</mat-header-cell>
+      <mat-cell class="points-cell" *matCellDef="let team">{{team.wins * 2}}</mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
