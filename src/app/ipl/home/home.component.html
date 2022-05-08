@@ -18,7 +18,7 @@
     </ng-container>
     <ng-container matColumnDef="nrr">
       <mat-header-cell *matHeaderCellDef>NRR</mat-header-cell>
-      <mat-cell class="nrr-cell" *matCellDef="let team">{{team.nrr| number:'0.3-3'}}</mat-cell>
+      <mat-cell class="nrr-cell" *matCellDef="let team">{{team.nrr>0 ? '+' : ''}}{{team.nrr| number:'0.3-3'}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="points">
       <mat-header-cell *matHeaderCellDef>Points</mat-header-cell>
