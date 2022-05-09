@@ -933,5 +933,22 @@
     "firstInningsWickets": 6,
     "secondInningsWickets": 10,
     "winner": "Chennai Super Kings"
+  },
+  {
+    "matchId": 1304102,
+    "matchDate": "2022-05-09T00:00:00.000Z",
+    "homeTeam": "Kolkata Knight Riders",
+    "visitingTeam": "Mumbai Indians",
+    "battingFirst": "Kolkata Knight Riders",
+    "battingSecond": "Mumbai Indians",
+    "firstInningsScore": 165,
+    "secondInningsScore": 113,
+    "firstInningsBalls": 120,
+    "secondInningsBalls": 105,
+    "firstInningsBallsForNRR": 120,
+    "secondInningsBallsForNRR": 120,
+    "firstInningsWickets": 9,
+    "secondInningsWickets": 10,
+    "winner": "Kolkata Knight Riders"
   }
 ]
