@@ -59,14 +59,14 @@
             <label>{{match.homeTeam}}</label>
             <span class="overs">
               <button type="button" name="reduceOvers" (click)="adjustOvers('home',i,'reduce')">-</button>
-              <input matInput type="number" name="over" value="" [(ngModel)]="matchesScheduled[i].homeOversBowled"
+              <input matInput type="number" name="over" placeholder="Overs" [(ngModel)]="matchesScheduled[i].homeOversBowled"
                 [disabled]="match.isComplete" class="input-field"
                 [class.overs-error]="matchesScheduled[i].homeOversError">
               <button type="button" name="increaseOvers" (click)="adjustOvers('home',i,'add')">+</button>
             </span>
             <span class="runs">
               <button type="button" name="reduceRuns" (click)="adjustRuns('home',i,'reduce')">-</button>
-              <input #homeOver type="number" name="over" value="" [(ngModel)]="matchesScheduled[i].homeRunsScored"
+              <input #homeOver type="number" name="over" placeholder="Runs" [(ngModel)]="matchesScheduled[i].homeRunsScored"
                 [disabled]="match.isComplete" class="input-field">
               <button type="button" name="increaseRuns" (click)="adjustRuns('home',i,'add')">+</button>
             </span>
@@ -95,13 +95,13 @@
             <label>{{match.visitingTeam}}</label>
             <span class="overs">
               <button type="button" name="reduceOvers" (click)="adjustOvers('visiting',i,'reduce')">-</button>
-              <input matInput type="number" name="over" value="" [(ngModel)]="matchesScheduled[i].visitingOversBowled"
+              <input matInput type="number" name="over" placeholder="Overs" [(ngModel)]="matchesScheduled[i].visitingOversBowled"
                 [disabled]="match.isComplete" class="input-field">
               <button type="button" name="increaseOvers" (click)="adjustOvers('visiting',i,'add')">+</button>
             </span>
             <span class="runs">
               <button type="button" name="reduceRuns" (click)="adjustRuns('visiting',i,'reduce')">-</button>
-              <input type="number" name="over" value="" [(ngModel)]="matchesScheduled[i].visitingRunsScored"
+              <input type="number" name="over" placeholder="Runs" [(ngModel)]="matchesScheduled[i].visitingRunsScored"
                 [disabled]="match.isComplete" class="input-field">
               <button type="button" name="increaseRuns" (click)="adjustRuns('visiting',i,'add')">+</button>
             </span>
@@ -158,14 +158,14 @@
             </div>
             <div [style.textAlign]="'center'">
               <button type="button" name="reduceOvers" (click)="adjustOvers('home',i,'reduce')">-</button>
-              <input matInput type="number" name="over" value="" [(ngModel)]="matchesScheduled[i].homeOversBowled"
+              <input matInput type="number" name="over" placeholder="Overs" [(ngModel)]="matchesScheduled[i].homeOversBowled"
                 [disabled]="match.isComplete" class="input-field"
                 [class.overs-error]="matchesScheduled[i].homeOversError">
               <button type="button" name="increaseOvers" (click)="adjustOvers('home',i,'add')">+</button>
             </div>
             <div [style.textAlign]="'center'">
               <button type="button" name="reduceRuns" (click)="adjustRuns('home',i,'reduce')">-</button>
-              <input #homeOver type="number" name="over" value="" [(ngModel)]="matchesScheduled[i].homeRunsScored"
+              <input #homeOver type="number" name="over" placeholder="Runs" [(ngModel)]="matchesScheduled[i].homeRunsScored"
                 [disabled]="match.isComplete" class="input-field">
               <button type="button" name="increaseRuns" (click)="adjustRuns('home',i,'add')">+</button>
             </div>
@@ -203,13 +203,13 @@
             </div>
             <div [style.textAlign]="'center'">
               <button type="button" name="reduceOvers" (click)="adjustOvers('visiting',i,'reduce')">-</button>
-              <input matInput type="number" name="over" value="" [(ngModel)]="matchesScheduled[i].visitingOversBowled"
+              <input matInput type="number" name="over" placeholder="Overs" [(ngModel)]="matchesScheduled[i].visitingOversBowled"
                 [disabled]="match.isComplete" class="input-field">
               <button type="button" name="increaseOvers" (click)="adjustOvers('visiting',i,'add')">+</button>
             </div>
             <div [style.textAlign]="'center'">
               <button type="button" name="reduceRuns" (click)="adjustRuns('visiting',i,'reduce')">-</button>
-              <input type="number" name="over" value="" [(ngModel)]="matchesScheduled[i].visitingRunsScored"
+              <input type="number" name="over" placeholder="Runs" [(ngModel)]="matchesScheduled[i].visitingRunsScored"
                 [disabled]="match.isComplete" class="input-field">
               <button type="button" name="increaseRuns" (click)="adjustRuns('visiting',i,'add')">+</button>
             </div>

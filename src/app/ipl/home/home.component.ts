@@ -51,10 +51,6 @@ export class HomeComponent implements OnInit {
     console.log(this.matchResults);
     this.matchesScheduled = matchesScheduledData.filter(each=>each.homeTeam!='TBA'); 
     this.matchesScheduled.forEach(each => {
-      each.homeOversBowled = 0.0;
-      each.visitingOversBowled = 0.0;
-      each.homeRunsScored = 0;
-      each.visitingRunsScored = 0;
       each.homeTeamBattingFirst = true;
       each.visitingTeamBattingFirst = false;
       each.homeTeamWon = false;
@@ -212,19 +208,38 @@ export class HomeComponent implements OnInit {
   simulatePointsTable(eachScheduledMatch: any, type: string) {
     console.log(eachScheduledMatch);
     let value = eachScheduledMatch.homeOversBowled;
-    var isError = (typeof (+value) != "number") || (+value < 0) || (+value > 20) || (+(value.toString().split(".")[1]) > 5);
+    var isError = (typeof (+value) != "number") || (+value < 0) || (+value > 20) || (+(value?.toString().split(".")[1]) > 5);
     console.log(isError);
     if (isError) {
       alert('Please enter valid overs for '+ eachScheduledMatch.homeTeam);
       return;
     }
+    eachScheduledMatch.homeOversBowled = eachScheduledMatch.homeOversBowled | 0;
     value = eachScheduledMatch.visitingOversBowled;
-    var isError = (typeof (+value) != "number") || (+value < 0) || (+value > 20) || (+(value.toString().split(".")[1]) > 5);
+    var isError = (typeof (+value) != "number") || (+value < 0) || (+value > 20) || (+(value?.toString().split(".")[1]) > 5);
     console.log(isError);
     if (isError) {
-      alert('Please enter valid oversfor '+ eachScheduledMatch.visitingTeam);
+      alert('Please enter valid overs for '+ eachScheduledMatch.visitingTeam);
       return;
     }
+    eachScheduledMatch.visitingOversBowled = eachScheduledMatch.visitingOversBowled | 0;
+    value = eachScheduledMatch.homeRunsScored;
+    var isError = (typeof (+value) != "number") || (+value < 0);
+    console.log(isError);
+    if (isError) {
+      alert('Please enter valid runs for '+ eachScheduledMatch.homeTeam);
+      return;
+    }
+    eachScheduledMatch.homeRunsScored = eachScheduledMatch.homeRunsScored | 0;
+  
+    value = eachScheduledMatch.visitingRunsScored;
+    var isError = (typeof (+value) != "number") || (+value < 0);
+    console.log(isError);
+    if (isError) {
+      alert('Please enter valid runs for '+ eachScheduledMatch.visitingTeam);
+      return;
+    }
+    eachScheduledMatch.visitingRunsScored = eachScheduledMatch.visitingRunsScored | 0; 
     if (type == 'add') {
       if (!eachScheduledMatch.homeTeamWon && !eachScheduledMatch.visitingTeamWon) {
         alert('Please select winning team.');
