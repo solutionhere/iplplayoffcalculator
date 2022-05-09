@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import matchResultsData from '../../../assets/matchResults.json';
-import matchesScheduledData from '../../../assets/matchesScheduled.json';
+import matches from '../../../assets/matches.json';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, MatSortable } from '@angular/material/sort';
 import { logos } from '../util';
@@ -27,7 +26,7 @@ export class HomeComponent implements OnInit {
     home: 'visiting',
     visiting: 'home'
   };
-  matchResults: any[] = matchResultsData;
+  matchResults: any[] = matches.matchResults;
   @ViewChild(MatSort) sort: MatSort = new MatSort();
   constructor() { }
   overValueBlurr(i: number, focEvent: any) {
@@ -49,7 +48,7 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit(): void {
     console.log(this.matchResults);
-    this.matchesScheduled = matchesScheduledData.filter(each=>each.homeTeam!='TBA'); 
+    this.matchesScheduled = matches.matchesScheduled.filter(each=>each.homeTeam!='TBA'); 
     this.matchesScheduled.forEach(each => {
       each.homeTeamBattingFirst = true;
       each.visitingTeamBattingFirst = false;
