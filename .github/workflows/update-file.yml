@@ -1,0 +1,18 @@
+name: Update File
+
+on:
+  push:
+  schedule:
+  - cron: "10 23 * * *"
+  - cron: "30 19 * * *"
+  - cron: "19 4 * * *"
+
+jobs:
+  update-file:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: kludex/update-file
+        with:
+          script_file: update_script.py
+          update_file: src/assets/matches.json
