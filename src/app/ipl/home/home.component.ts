@@ -280,4 +280,8 @@ export class HomeComponent implements OnInit {
     let remainingOvr = ovr.split('.')[1] ? +("0." + ovr.split('.')[1] % 6).toString().split('.')[1] : 0;
     return exactOvr + remainingOvr
   }
+
+  public get isMobileWidth() {
+    return window.innerWidth < 650;
+  }
 }
