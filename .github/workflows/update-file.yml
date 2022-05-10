@@ -3,8 +3,8 @@ name: update matches json
 on:
   push:
   schedule:
-  - cron: "40 17 * * *"
-  - cron: "35 17 * * *"
+  - cron: "40 23 * * *"
+  - cron: "35 23 * * *"
 jobs:
     resources:
         name: Update resources
@@ -15,7 +15,7 @@ jobs:
             - uses: actions/setup-node@v1
 
             - name: Fetch resources
-              run: python update_script.py
+              run: python update-file.py
 
             - name: Update resources
               uses: test-room-7/action-update-file@v1
