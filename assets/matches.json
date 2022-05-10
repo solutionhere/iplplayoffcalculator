@@ -917,21 +917,60 @@
       "firstInningsWickets": 3,
       "secondInningsWickets": 10,
       "winner": "Royal Challengers Bangalore"
-    }
-  ],
-  "matchesScheduled": [
+    },
     {
       "matchId": 1304101,
       "matchDate": "2022-05-08T00:00:00.000Z",
       "homeTeam": "Chennai Super Kings",
-      "visitingTeam": "Delhi Capitals"
+      "visitingTeam": "Delhi Capitals",
+      "battingFirst": "Chennai Super Kings",
+      "battingSecond": "Delhi Capitals",
+      "firstInningsScore": 208,
+      "secondInningsScore": 117,
+      "firstInningsBalls": 120,
+      "secondInningsBalls": 106,
+      "firstInningsBallsForNRR": 120,
+      "secondInningsBallsForNRR": 120,
+      "firstInningsWickets": 6,
+      "secondInningsWickets": 10,
+      "winner": "Chennai Super Kings"
     },
     {
       "matchId": 1304102,
       "matchDate": "2022-05-09T00:00:00.000Z",
       "homeTeam": "Kolkata Knight Riders",
-      "visitingTeam": "Mumbai Indians"
+      "visitingTeam": "Mumbai Indians",
+      "battingFirst": "Kolkata Knight Riders",
+      "battingSecond": "Mumbai Indians",
+      "firstInningsScore": 165,
+      "secondInningsScore": 113,
+      "firstInningsBalls": 120,
+      "secondInningsBalls": 105,
+      "firstInningsBallsForNRR": 120,
+      "secondInningsBallsForNRR": 120,
+      "firstInningsWickets": 9,
+      "secondInningsWickets": 10,
+      "winner": "Kolkata Knight Riders"
     },
+    {
+      "matchId": 1304103,
+      "matchDate": "2022-05-10T00:00:00.000Z",
+      "homeTeam": "Gujarat Titans",
+      "visitingTeam": "Lucknow Super Giants",
+      "battingFirst": "Gujarat Titans",
+      "battingSecond": "Lucknow Super Giants",
+      "firstInningsScore": 144,
+      "secondInningsScore": 82,
+      "firstInningsBalls": 120,
+      "secondInningsBalls": 83,
+      "firstInningsBallsForNRR": 120,
+      "secondInningsBallsForNRR": 120,
+      "firstInningsWickets": 4,
+      "secondInningsWickets": 10,
+      "winner": "Gujarat Titans"
+    }
+  ],
+  "matchesScheduled": [
     {
       "matchId": 1304104,
       "matchDate": "2022-05-11T00:00:00.000Z",
@@ -1009,6 +1048,30 @@
       "matchDate": "2022-05-22T00:00:00.000Z",
       "homeTeam": "Sunrisers Hyderabad",
       "visitingTeam": "Punjab Kings"
+    },
+    {
+      "matchId": 1312197,
+      "matchDate": "2022-05-24T00:00:00.000Z",
+      "homeTeam": "TBA",
+      "visitingTeam": "TBA"
+    },
+    {
+      "matchId": 1312198,
+      "matchDate": "2022-05-25T00:00:00.000Z",
+      "homeTeam": "TBA",
+      "visitingTeam": "TBA"
+    },
+    {
+      "matchId": 1312199,
+      "matchDate": "2022-05-27T00:00:00.000Z",
+      "homeTeam": "TBA",
+      "visitingTeam": "TBA"
+    },
+    {
+      "matchId": 1312200,
+      "matchDate": "2022-05-29T00:00:00.000Z",
+      "homeTeam": "TBA",
+      "visitingTeam": "TBA"
     }
   ]
 }
