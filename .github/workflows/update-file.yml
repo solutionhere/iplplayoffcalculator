@@ -1,10 +1,8 @@
 name: update matches json
 
 on:
-  push:
-  schedule:
-  - cron: "35 0 * * *"
-  - cron: "20 0 * * *"
+  repository_dispatch:
+    types: [update-match-json]
 jobs:
     resources:
         name: Update resources
