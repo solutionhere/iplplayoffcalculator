@@ -3,15 +3,23 @@ name: update matches json
 on:
   push:
   schedule:
-  - cron: "15 17 * * *"
-  - cron: "30 17 * * *"
-
+  - cron: "40 17 * * *"
+  - cron: "35 17 * * *"
 jobs:
-  update-file:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: kludex/update-file
-        with:
-          script_file: update_script.py
-          update_file: src/assets/matches.json
+    resources:
+        name: Update resources
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+
+            - uses: actions/setup-node@v1
+
+            - name: Fetch resources
+              run: update_script.py
+
+            - name: Update resources
+              uses: test-room-7/action-update-file@v1
+              with:
+                  file-path: src/assets/matches.json
+                  commit-msg: Update resources
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
