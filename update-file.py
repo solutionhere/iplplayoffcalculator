@@ -25,7 +25,7 @@ for i in matches['matchesScheduled']:
         data = requests.get('https://hs-consumer-api.espncricinfo.com/v1/pages/match/home?lang=en&seriesId=1298423&matchId=' + str(i['matchId']))
         match = data.json()
         if match['match']['state'] == "POST":
-            print i['homeTeam']+' - '+i['visitingTeam']
+            print(i['homeTeam']+' - '+i['visitingTeam'])
             matchData = {}
             matchData['matchDate'] = match['match']['startDate']
             matchData['matchId'] = match['match']['objectId']
@@ -55,7 +55,7 @@ for i in matches['matchesScheduled']:
             matches['matchesScheduled'] = [d for d in matches['matchesScheduled'] if d['matchId'] != matchData['matchId']]
             print(len(matches['matchesScheduled']))
         else: 
-            print i['homeTeam']+' - '+i['visitingTeam']
+            print(i['homeTeam']+' - '+i['visitingTeam'])
             print('MATCH YET TO HAPPEN OR IN PROGRESS');
 fr = open('matches.json', 'w')
 json.dump(matches, fr, sort_keys=True, indent=2)
