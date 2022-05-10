@@ -13,7 +13,7 @@ teamId = {
     4346: "Mumbai Indians",
     5143: "Sunrisers Hyderabad"
 };
-f = open('matches.json', 'r')
+f = open('src/assets/matches.json', 'r')
  
 matches = json.load(f)
 f.close()
@@ -57,6 +57,6 @@ for i in matches['matchesScheduled']:
         else: 
             print(i['homeTeam']+' - '+i['visitingTeam'])
             print('MATCH YET TO HAPPEN OR IN PROGRESS');
-fr = open('matches.json', 'w')
+fr = open('src/assets/matches.json', 'w')
 json.dump(matches, fr, sort_keys=True, indent=2)
 f.close()
