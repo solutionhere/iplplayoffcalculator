@@ -968,15 +968,26 @@
       "secondInningsWickets": 10,
       "visitingTeam": "Lucknow Super Giants",
       "winner": "Gujarat Titans"
-    }
-  ],
-  "matchesScheduled": [
+    },
     {
+      "battingFirst": "Rajasthan Royals",
+      "battingSecond": "Delhi Capitals",
+      "firstInningsBalls": 120,
+      "firstInningsBallsForNRR": 120,
+      "firstInningsScore": 160,
+      "firstInningsWickets": 6,
       "homeTeam": "Rajasthan Royals",
       "matchDate": "2022-05-11T00:00:00.000Z",
       "matchId": 1304104,
-      "visitingTeam": "Delhi Capitals"
-    },
+      "secondInningsBalls": 109,
+      "secondInningsBallsForNRR": 109,
+      "secondInningsScore": 161,
+      "secondInningsWickets": 2,
+      "visitingTeam": "Delhi Capitals",
+      "winner": "Delhi Capitals"
+    }
+  ],
+  "matchesScheduled": [
     {
       "homeTeam": "Chennai Super Kings",
       "matchDate": "2022-05-12T00:00:00.000Z",
