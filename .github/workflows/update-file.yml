@@ -21,7 +21,7 @@ jobs:
                   file-path: src/assets/matches.json
                   commit-msg: Update resources
                   github-token: ${{ secrets.GITHUB_TOKEN }}
-	  deploy:
+    deploy:
         name: Trigger Publish Workflow
 		    needs: resources
 		    runs-on: ubuntu-latest
