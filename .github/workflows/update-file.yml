@@ -22,11 +22,11 @@ jobs:
                   commit-msg: Update resources
                   github-token: ${{ secrets.GITHUB_TOKEN }}
     deploy:
-        name: Trigger Publish Workflow
-		    needs: resources
-		    runs-on: ubuntu-latest
-		    steps:
-			      - run: |
-				        curl -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: token $USER_TOKEN" https://api.github.com/repos/solutionhere/iplplayoffcalculator/dispatches -d '{"event_type":"publish-to-pages"}'
-              env:
-                USER_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      name: Trigger Publish Workflow
+      needs: resources
+      runs-on: ubuntu-latest
+      steps:
+        - run: |
+            curl -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: token $USER_TOKEN" https://api.github.com/repos/solutionhere/iplplayoffcalculator/dispatches -d '{"event_type":"publish-to-pages"}'
+          env:
+            USER_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
