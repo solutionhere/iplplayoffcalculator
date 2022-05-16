@@ -985,39 +985,94 @@
       "secondInningsWickets": 2,
       "visitingTeam": "Delhi Capitals",
       "winner": "Delhi Capitals"
-    }
-  ],
-  "matchesScheduled": [
-    {
-      "homeTeam": "Chennai Super Kings",
-      "matchDate": "2022-05-12T00:00:00.001Z",
-      "matchId": 1304105,
-      "visitingTeam": "Mumbai Indians"
     },
     {
-      "homeTeam": "Royal Challengers Bangalore",
+      "battingFirst": "Chennai Super Kings",
+      "battingSecond": "Mumbai Indians",
+      "firstInningsBalls": 96,
+      "firstInningsBallsForNRR": 120,
+      "firstInningsScore": 97,
+      "firstInningsWickets": 10,
+      "homeTeam": "Chennai Super Kings",
+      "matchDate": "2022-05-12T00:00:00.000Z",
+      "matchId": 1304105,
+      "secondInningsBalls": 89,
+      "secondInningsBallsForNRR": 89,
+      "secondInningsScore": 103,
+      "secondInningsWickets": 5,
+      "visitingTeam": "Mumbai Indians",
+      "winner": "Mumbai Indians"
+    },
+    {
+      "battingFirst": "Punjab Kings",
+      "battingSecond": "Royal Challengers Bangalore",
+      "firstInningsBalls": 120,
+      "firstInningsBallsForNRR": 120,
+      "firstInningsScore": 209,
+      "firstInningsWickets": 9,
+      "homeTeam": "Punjab Kings",
       "matchDate": "2022-05-13T00:00:00.000Z",
       "matchId": 1304106,
-      "visitingTeam": "Punjab Kings"
+      "secondInningsBalls": 120,
+      "secondInningsBallsForNRR": 120,
+      "secondInningsScore": 155,
+      "secondInningsWickets": 9,
+      "visitingTeam": "Royal Challengers Bangalore",
+      "winner": "Punjab Kings"
     },
     {
+      "battingFirst": "Kolkata Knight Riders",
+      "battingSecond": "Sunrisers Hyderabad",
+      "firstInningsBalls": 120,
+      "firstInningsBallsForNRR": 120,
+      "firstInningsScore": 177,
+      "firstInningsWickets": 6,
       "homeTeam": "Kolkata Knight Riders",
       "matchDate": "2022-05-14T00:00:00.000Z",
       "matchId": 1304107,
-      "visitingTeam": "Sunrisers Hyderabad"
+      "secondInningsBalls": 120,
+      "secondInningsBallsForNRR": 120,
+      "secondInningsScore": 123,
+      "secondInningsWickets": 8,
+      "visitingTeam": "Sunrisers Hyderabad",
+      "winner": "Kolkata Knight Riders"
     },
     {
+      "battingFirst": "Chennai Super Kings",
+      "battingSecond": "Gujarat Titans",
+      "firstInningsBalls": 120,
+      "firstInningsBallsForNRR": 120,
+      "firstInningsScore": 133,
+      "firstInningsWickets": 5,
       "homeTeam": "Chennai Super Kings",
       "matchDate": "2022-05-15T00:00:00.000Z",
       "matchId": 1304108,
-      "visitingTeam": "Gujarat Titans"
+      "secondInningsBalls": 115,
+      "secondInningsBallsForNRR": 115,
+      "secondInningsScore": 137,
+      "secondInningsWickets": 3,
+      "visitingTeam": "Gujarat Titans",
+      "winner": "Gujarat Titans"
     },
     {
-      "homeTeam": "Lucknow Super Giants",
+      "battingFirst": "Rajasthan Royals",
+      "battingSecond": "Lucknow Super Giants",
+      "firstInningsBalls": 120,
+      "firstInningsBallsForNRR": 120,
+      "firstInningsScore": 178,
+      "firstInningsWickets": 6,
+      "homeTeam": "Rajasthan Royals",
       "matchDate": "2022-05-15T00:00:00.000Z",
       "matchId": 1304109,
-      "visitingTeam": "Rajasthan Royals"
-    },
+      "secondInningsBalls": 120,
+      "secondInningsBallsForNRR": 120,
+      "secondInningsScore": 154,
+      "secondInningsWickets": 8,
+      "visitingTeam": "Lucknow Super Giants",
+      "winner": "Rajasthan Royals"
+    }
+  ],
+  "matchesScheduled": [
     {
       "homeTeam": "Punjab Kings",
       "matchDate": "2022-05-16T00:00:00.000Z",
