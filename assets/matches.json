@@ -1070,21 +1070,43 @@
       "secondInningsWickets": 8,
       "visitingTeam": "Lucknow Super Giants",
       "winner": "Rajasthan Royals"
+    },
+    {
+      "battingFirst": "Delhi Capitals",
+      "battingSecond": "Punjab Kings",
+      "firstInningsBalls": 120,
+      "firstInningsBallsForNRR": 120,
+      "firstInningsScore": 159,
+      "firstInningsWickets": 7,
+      "homeTeam": "Delhi Capitals",
+      "matchDate": "2022-05-16T00:00:00.000Z",
+      "matchId": 1304110,
+      "secondInningsBalls": 120,
+      "secondInningsBallsForNRR": 120,
+      "secondInningsScore": 142,
+      "secondInningsWickets": 9,
+      "visitingTeam": "Punjab Kings",
+      "winner": "Delhi Capitals"
+    },
+    {
+      "battingFirst": "Sunrisers Hyderabad",
+      "battingSecond": "Mumbai Indians",
+      "firstInningsBalls": 120,
+      "firstInningsBallsForNRR": 120,
+      "firstInningsScore": 193,
+      "firstInningsWickets": 6,
+      "homeTeam": "Sunrisers Hyderabad",
+      "matchDate": "2022-05-17T00:00:00.000Z",
+      "matchId": 1304111,
+      "secondInningsBalls": 120,
+      "secondInningsBallsForNRR": 120,
+      "secondInningsScore": 190,
+      "secondInningsWickets": 7,
+      "visitingTeam": "Mumbai Indians",
+      "winner": "Sunrisers Hyderabad"
     }
   ],
   "matchesScheduled": [
-    {
-      "homeTeam": "Punjab Kings",
-      "matchDate": "2022-05-16T00:00:00.000Z",
-      "matchId": 1304110,
-      "visitingTeam": "Delhi Capitals"
-    },
-    {
-      "homeTeam": "Mumbai Indians",
-      "matchDate": "2022-05-17T00:00:00.000Z",
-      "matchId": 1304111,
-      "visitingTeam": "Sunrisers Hyderabad"
-    },
     {
       "homeTeam": "Kolkata Knight Riders",
       "matchDate": "2022-05-18T00:00:00.000Z",
