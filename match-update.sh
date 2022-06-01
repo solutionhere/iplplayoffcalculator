@@ -1,0 +1,2 @@
+curl -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: token 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" https://api.github.com/repos/solutionhere/iplplayoffcalculator/dispatches -d '{"event_type":"update-match-json"}'
+$SHELL

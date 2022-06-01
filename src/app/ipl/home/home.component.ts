@@ -30,13 +30,9 @@ export class HomeComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort = new MatSort();
   constructor() { }
   overValueBlurr(i: number, focEvent: any) {
-    console.log(focEvent, i);
     if (focEvent) {
       var value: string = this.matchesScheduled[i].homeOversBowled + '';
-      console.log(event, value);
-      console.log((typeof (+value) != "number"), (+value < 0), (+value >= 20), (+value.split(".")[1] > 5), (value.split(".").length > 1 ? (+value.split(".")[1]?.length != 1) : false));
       var isError = (typeof (+value) != "number") || (+value < 0) || (+value >= 20) || (+value.split(".")[1] > 5);
-      console.log(isError);
       if (isError) {
         this.matchesScheduled[i].homeOversError = true;
       } else {
@@ -47,7 +43,6 @@ export class HomeComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    console.log(this.matchResults);
     this.matchesScheduled = matches.matchesScheduled.filter(each=>each.homeTeam!='TBA'); 
     this.matchesScheduled.forEach(each => {
       each.homeTeamBattingFirst = true;
@@ -55,6 +50,10 @@ export class HomeComponent implements OnInit {
       each.homeTeamWon = false;
       each.visitingTeamWon = false;
       each.isComplete = false;
+    });
+    this.matchesScheduled.sort((a: any, b: any)=>{
+      var sortval = new Date(a.matchDate)<new Date(b.matchDate)?-1:new Date(b.matchDate)<new Date(a.matchDate)?1:0;
+      return sortval
     });
     this.generatePointsTable();
     this.dataSource.sort = this.sort;
@@ -73,7 +72,6 @@ export class HomeComponent implements OnInit {
     });
   }
   battingFirstToggle(index: number, teamType: string, $event: any) {
-    console.log($event);
     this.matchesScheduled[index][this.counterTeamType[teamType] + "TeamBattingFirst"] = !$event.checked;
     this.matchesScheduled[index].homeOversBowled = 0.0;
     this.matchesScheduled[index].visitingOversBowled = 0.0;
@@ -85,7 +83,6 @@ export class HomeComponent implements OnInit {
   }
   adjustOvers(teamType: string, index: number, operation: string) {
     var overs = this.matchesScheduled[index][teamType + "OversBowled"];
-    console.log(overs, (overs == undefined));
     if (overs == undefined) {
       overs = 0;
     }
@@ -96,13 +93,11 @@ export class HomeComponent implements OnInit {
       return;
     }
     let adjustment = (0.1 * this.adjustValues[operation]);
-    console.log(adjustment);
     if (operation == 'add' && (overs + '').endsWith(".5")) {
       adjustment = 0.5;
     } else if (operation == 'reduce' && (overs + '').endsWith(".0")) {
       adjustment = -0.5;
     }
-    console.log(adjustment, (+overs + +adjustment));
     overs = (Math.round((+overs + +adjustment) * 10) / 10).toFixed(1);
     this.matchesScheduled[index][teamType + "OversBowled"] = overs;
   }
@@ -186,10 +181,8 @@ export class HomeComponent implements OnInit {
       team.facedOversNRR = ((team.facedBallsNRR - (team.facedBallsNRR % 6)) / 6 + (team.facedBallsNRR % 6) / 6);
       team.bowledOversNRR = ((team.bowledBallsNRR - (team.bowledBallsNRR % 6)) / 6 + (team.bowledBallsNRR % 6) / 6)
       team.nrr = ((team.scoredRuns / team.facedOversNRR) - (team.concededRuns / team.bowledOversNRR));
-      console.log(team);
       return team;
     });
-    console.log(JSON.stringify(this.pointsTable, null, 2));
     this.pointsTable.sort((a: any, b: any) => {
       let aValue = ((a.scoredRuns / a.facedBalls) - (a.concededRuns / a.bowledBalls))
       let bValue = ((b.scoredRuns / b.facedBalls) - (b.concededRuns / b.bowledBalls))
@@ -201,14 +194,11 @@ export class HomeComponent implements OnInit {
         return 0;
       }
     });
-    console.log(JSON.stringify(this.pointsTable, null, 2));
     this.dataSource = new MatTableDataSource(this.pointsTable);
   }
   simulatePointsTable(eachScheduledMatch: any, type: string) {
-    console.log(eachScheduledMatch);
     let value = eachScheduledMatch.homeOversBowled;
     var isError = (typeof (+value) != "number") || (+value < 0) || (+value > 20) || (+(value?.toString().split(".")[1]) > 5);
-    console.log(isError);
     if (isError) {
       alert('Please enter valid overs for '+ eachScheduledMatch.homeTeam);
       return;
@@ -216,7 +206,6 @@ export class HomeComponent implements OnInit {
     eachScheduledMatch.homeOversBowled = eachScheduledMatch.homeOversBowled | 0;
     value = eachScheduledMatch.visitingOversBowled;
     var isError = (typeof (+value) != "number") || (+value < 0) || (+value > 20) || (+(value?.toString().split(".")[1]) > 5);
-    console.log(isError);
     if (isError) {
       alert('Please enter valid overs for '+ eachScheduledMatch.visitingTeam);
       return;
@@ -224,7 +213,6 @@ export class HomeComponent implements OnInit {
     eachScheduledMatch.visitingOversBowled = eachScheduledMatch.visitingOversBowled | 0;
     value = eachScheduledMatch.homeRunsScored;
     var isError = (typeof (+value) != "number") || (+value < 0);
-    console.log(isError);
     if (isError) {
       alert('Please enter valid runs for '+ eachScheduledMatch.homeTeam);
       return;
@@ -233,7 +221,6 @@ export class HomeComponent implements OnInit {
   
     value = eachScheduledMatch.visitingRunsScored;
     var isError = (typeof (+value) != "number") || (+value < 0);
-    console.log(isError);
     if (isError) {
       alert('Please enter valid runs for '+ eachScheduledMatch.visitingTeam);
       return;
@@ -270,7 +257,6 @@ export class HomeComponent implements OnInit {
       this.matchResults.splice(idx, 1);
       eachScheduledMatch.isComplete = false;
     }
-    console.log(this.matchResults);
     this.pointsTable = [];
     this.generatePointsTable();
     // this.dataSource.sort = this.sort;
